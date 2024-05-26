@@ -13,17 +13,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <?php
          require_once './Video.php';
          require_once './Pupil.php';
+         require_once './Visualization.php';
         
         $v[0] = new Video("OOP Class #1");
         $v[1] = new Video("PHP Class #12");
         $v[2] = new Video("HTML5 Class #10");
         
-        print_r($v);
-        
         $p[0] = new Pupil("Jubilee", 22, "F", "Juby");
         $p[1] = new Pupil("Creuse", 12, "F", "Crew");
         
-        print_r($p);
+        echo "<p>VISUALIZATIONS<br>----------------------------</p>";
+        $vs[0] = new Visualization($p[0], $v[2]);
+        $vs[1] = new Visualization($p[0], $v[1]);
+        
+        $vs[0]->review();
+        $vs[1]->reviewPorc(85);
+        
+        print_r($vs);
         ?>
         </pre>
     </body>

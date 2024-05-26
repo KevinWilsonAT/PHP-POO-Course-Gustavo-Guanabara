@@ -53,7 +53,8 @@ class Video implements VideoActions{
    }
 
    public function setReview($review) {
-       $this->review = $review;
+        $avg = ($this->review + $review)/2;
+        $this->review = $avg;
    }
 
    public function setViews($views) {
@@ -80,11 +81,4 @@ class Video implements VideoActions{
         $this->likes++;
     }
 
-    /*
-    @Override
-    public String toString() {
-        return "Video{" + "title=" + title + ", review=" + review + ", views=" + views + ", likes=" + likes + ", playing=" + playing + '}';
-    }
-
-     */
 }
